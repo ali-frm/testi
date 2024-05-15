@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# نصب figlet و wireguard اگر قبلاً نصب نشده باشند
+# Install figlet and wireguard if they are not installed
 sudo apt-get update && sudo apt-get install -y figlet wireguard
 
-# نمایش پیام گرافیکی
+# Display graphical message
 figlet nikancloud
 
-# دریافت IP سرور ایران از کاربر
-read -p "لطفاً IP سرور ایران را وارد کنید: " iran_server_ip
+# Get server IP from the user with green color
+echo -e "\033[0;32mPlease enter the Iran server IP:\033[0m"
+read iran_server_ip
 
-# ایجاد فایل wg0.conf با محتویات زیر
+# Create wg0.conf with the following contents
 cat << EOF > /etc/wireguard/wg0.conf
 [Interface]
 ## This Desktop/client's private key ##
@@ -34,4 +35,4 @@ Endpoint = 127.0.0.1:8080
 PersistentKeepalive = 15
 EOF
 
-echo "فایل wg0.conf برای سرور خارج با موفقیت ایجاد و تنظیم شد."
+echo "wg0.conf file for the foreign server has been successfully created and configured."
