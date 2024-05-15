@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # نصب figlet و wireguard اگر قبلاً نصب نشده باشند
-sudo apt-get update && sudo apt-get install -y figlet wireguard
+sudo apt update && sudo apt install -y figlet wireguard
 
 # نمایش پیام گرافیکی
 figlet nikancloud
