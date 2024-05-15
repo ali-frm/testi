@@ -1,15 +1,16 @@
 #!/bin/bash
 
-# نصب figlet و wireguard اگر قبلاً نصب نشده باشند
-sudo apt update && sudo apt install -y figlet wireguard
+# Install figlet and wireguard if they are not installed
+sudo apt-get update && sudo apt-get install -y figlet wireguard
 
-# نمایش پیام گرافیکی
+# Display graphical message
 figlet nikancloud
 
-# دریافت IP سرور ایران از کاربر
-read -p "لطفاً IP سرور ایران را وارد کنید: " server_ip
+# Get server IP from the user with green color
+echo -e "\033[0;32mPlease enter the Iran server IP:\033[0m"
+read server_ip
 
-# ایجاد فایل wg0.conf با محتویات زیر
+# Create wg0.conf with the following contents
 cat << EOF > /etc/wireguard/wg0.conf
 ## Set Up WireGuard VPN on Ubuntu By Editing/Creating wg0.conf File ##
 [Interface]
@@ -32,4 +33,4 @@ PublicKey = ZaX/nYl6I2blqtnRBz9Ectk0961ALUy1gtytCQ82ASA=
 AllowedIPs = 192.168.6.2/32
 EOF
 
-echo "فایل wg0.conf با موفقیت ایجاد و تنظیم شد."
+echo "wg0.conf file has been successfully created and configured."
