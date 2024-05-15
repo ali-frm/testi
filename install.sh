@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # نمایش پرسش برای تعیین موقعیت سرور
-echo "این سرور در ایران است یا خارج؟ (iran/abroad)"
+echo "iran or kharej ?  (iran/abroad)"
 read server_location
 
 # تنظیم مسیر ریپازیتوری GitHub
