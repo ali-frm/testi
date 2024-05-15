@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# نمایش پرسش برای تعیین موقعیت سرور
-echo "iran or kharej ?  (iran/abroad)"
+# نمایش پرسش برای تعیین موقعیت سرور با رنگ سبز
+echo -e "\033[0;32mIs this server located in Iran or abroad? (iran/abroad):\033[0m"
 read server_location
 
 # تنظیم مسیر ریپازیتوری GitHub
@@ -18,7 +18,7 @@ elif [ "$server_location" == "abroad" ]; then
     chmod +x server_abroad.sh
     ./server_abroad.sh
 else
-    echo "پاسخ نامعتبر. لطفا 'iran' یا 'abroad' را وارد کنید."
+    echo -e "\033[0;32mInvalid response. Please enter 'iran' or 'abroad'.\033[0m"
 fi
 
-echo "نصب اسکریپت مورد نظر با موفقیت انجام شد."
+echo -e "\033[0;32mThe appropriate script has been successfully installed and executed.\033[0m"
